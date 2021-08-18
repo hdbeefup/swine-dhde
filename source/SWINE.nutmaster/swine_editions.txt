@@ -1,0 +1,20 @@
+0043a82d
+type: byte (not default 4 bytes as in cheat engine)
+
+0x0 = Nothing
+0x1 = Developer
+0x2 = Nothing (Set by default on 1.9 )
+0x3 = test
+0x4 = patch test
+0x5 = gamespy test
+0x6 = rabbit mp
+0x7 = pig mp
+0x8 = mission
+0x9 = second mission
+0x10 = alpha
+0x11 = beta
+0x12 = rabbit single demo
+0x13 = pig single demo
+0x14 = mission demo
+0x15 = second mission demo
+0x16 = nothing

@@ -1,0 +1,284 @@
+// useless, no effect
+// no idea
+	injector::WriteMemory(0x406486, ResX, true); // 800 0x320 2003
+	injector::WriteMemory(0x40647a, ResY, true); // 600 0x258 5802
+
+// no idea
+	injector::WriteMemory(0x4110f9, ResX, true); // 800
+	injector::WriteMemory(0x4110f4, ResY, true); // 600
+	
+// no idea
+	injector::WriteMemory(0x411115, ResX, true); // 800
+	injector::WriteMemory(0x411104, ResY, true); // 600
+
+// no idea
+	injector::WriteMemory(0x4111f3, ResX, true); // 800
+	injector::WriteMemory(0x4111EE, ResY, true); // 600
+
+// no idea
+	injector::WriteMemory(0x41120f, ResX, true); // 800
+	injector::WriteMemory(0x4111fe, ResY, true); // 600
+
+// no idea
+	injector::WriteMemory(0x4112f3, ResX, true); // 800
+	injector::WriteMemory(0x4112ee, ResY, true); // 600
+
+// no idea
+	injector::WriteMemory(0x41130f, ResX, true); // 800
+	injector::WriteMemory(0x4112fe, ResY, true); // 600
+	
+	// no idea
+	injector::WriteMemory(0x4113f3, ResX, true); // 800
+	injector::WriteMemory(0x4113ee, ResY, true); // 600
+
+// no idea
+	injector::WriteMemory(0x41140f, ResX, true); // 800
+	injector::WriteMemory(0x4113fe, ResY, true); // 600
+
+// no idea
+	injector::WriteMemory(0x4114f3, ResX, true); // 800
+	injector::WriteMemory(0x4114ee, ResY, true); // 600
+
+// no idea
+	injector::WriteMemory(0x41150f, ResX, true); // 800
+	injector::WriteMemory(0x4114fe, ResY, true); // 600
+
+// no idea
+	injector::WriteMemory(0x4115f3, ResX, true); // 800
+	injector::WriteMemory(0x4115ee, ResY, true); // 600
+
+// no idea
+	injector::WriteMemory(0x41160f, ResX, true); // 800
+	injector::WriteMemory(0x4115fe, ResY, true); // 600 0x258 5802
+
+// no idea 
+	injector::WriteMemory(0x4116f3, ResX, true); // 800
+	injector::WriteMemory(0x4116ee, ResY, true); // 600
+	
+	// no idea 
+	injector::WriteMemory(0x41170f, ResX, true); // 800
+	injector::WriteMemory(0x4116fe, ResY, true); // 600
+
+// no idea
+	injector::WriteMemory(0x4117f3, ResX, true); // 800
+	injector::WriteMemory(0x4117ee, ResY, true); // 600
+
+// no idea
+	injector::WriteMemory(0x41180f, ResX, true); // 800
+	injector::WriteMemory(0x4117fe, ResY, true); // 600
+
+// no idea
+	injector::WriteMemory(0x4118f3, ResX, true); // 800
+	injector::WriteMemory(0x4118ee, ResY, true); // 600
+
+// no idea
+	injector::WriteMemory(0x41190f, ResX, true); // 800
+	injector::WriteMemory(0x4118fe, ResY, true); // 600
+
+// no idea
+	injector::WriteMemory(0x4119f3, ResX, true); // 800
+	injector::WriteMemory(0x4119ee, ResY, true); // 600
+
+// no idea
+	injector::WriteMemory(0x411a0f, ResX, true); // 800
+	injector::WriteMemory(0x4119fe, ResY, true); // 600
+
+// no idea
+	injector::WriteMemory(0x411af3, ResX, true); // 800
+	injector::WriteMemory(0x411aee, ResY, true); // 600
+
+// no idea
+	injector::WriteMemory(0x411b0f, ResX, true); // 800
+	injector::WriteMemory(0x411afe, ResY, true); // 600
+	/*
+// no idea
+	injector::WriteMemory(0x42f057, ResX, true); // 800
+	injector::WriteMemory(0x42f046, ResY, true); // 600
+
+// no idea
+	injector::WriteMemory(0x42f14b, ResX, true); // 800
+	injector::WriteMemory(0x42f146, ResY, true); // 600
+
+// no idea
+	injector::WriteMemory(0x42f167, ResX, true); // 800
+	injector::WriteMemory(0x42f156, ResY, true); // 600
+
+// no idea
+	injector::WriteMemory(0x42f25b, ResX, true); // 800
+	injector::WriteMemory(0x42f256, ResY, true); // 600
+
+// no idea
+	injector::WriteMemory(0x42f277, ResX, true); // 800
+	injector::WriteMemory(0x42f266, ResY, true); // 600
+
+// no idea
+	injector::WriteMemory(0x42f36b, ResX, true); // 800
+	injector::WriteMemory(0x42f366, ResY, true); // 600
+	*/
+	/*
+// no idea
+	injector::WriteMemory(0x42f387, ResX, true); // 800
+	injector::WriteMemory(0x42f376, ResY, true); // 600
+
+// no idea
+	injector::WriteMemory(0x42f47b, ResX, true); // 800
+	injector::WriteMemory(0x42f476, ResY, true); // 600
+
+// no idea
+	injector::WriteMemory(0x42f497, ResX, true); // 800
+	injector::WriteMemory(0x42f486, ResY, true); // 600
+
+// no idea
+	injector::WriteMemory(0x42f58b, ResX, true); // 800
+	injector::WriteMemory(0x42f586, ResY, true); // 600
+
+// no idea
+	injector::WriteMemory(0x42f5a7, ResX, true); // 800
+	injector::WriteMemory(0x42f596, ResY, true); // 600
+
+// no idea
+	injector::WriteMemory(0x42f693, ResX, true); // 800
+	injector::WriteMemory(0x42f68e, ResY, true); // 600
+
+// no idea
+	injector::WriteMemory(0x42f6af, ResX, true); // 800
+	injector::WriteMemory(0x42f69e, ResY, true); // 600
+
+// no idea near mp
+	injector::WriteMemory(0x42f8b8, ResX, true); // 800
+	injector::WriteMemory(0x42f8b3, ResY, true); // 600
+
+// no idea mp
+	injector::WriteMemory(0x42f8da, ResX, true); // 800
+	injector::WriteMemory(0x42f8c6, ResY, true); // 600
+
+// no idea near direct ip
+	injector::WriteMemory(0x42faee, ResX, true); // 800
+	injector::WriteMemory(0x42fae9, ResY, true); // 600
+
+// no idea mp direct ip
+	injector::WriteMemory(0x42fb0a, ResX, true); // 800
+	injector::WriteMemory(0x42faf9, ResY, true); // 600
+
+// no idea lan
+	injector::WriteMemory(0x42fc3e, ResX, true); // 800
+	injector::WriteMemory(0x42fc39, ResY, true); // 600
+
+// no idea lan
+	injector::WriteMemory(0x42fc5a, ResX, true); // 800
+	injector::WriteMemory(0x42fc49, ResY, true); // 600
+
+// no idea gamespy
+	injector::WriteMemory(0x42fd80, ResX, true); // 800
+	injector::WriteMemory(0x42fd7b, ResY, true); // 600
+
+// no idea gamespy
+	injector::WriteMemory(0x42fd9c, ResX, true); // 800
+	injector::WriteMemory(0x42fd8b, ResY, true); // 600
+	*/
+	/*
+// no idea gamespy
+	injector::WriteMemory(0x42fec0, ResX, true); // 800
+	injector::WriteMemory(0x42febb, ResY, true); // 600
+
+// no idea gamespy
+	injector::WriteMemory(0x42fedc, ResX, true); // 800
+	injector::WriteMemory(0x42fecb, ResY, true); // 600
+
+// no idea chatroom
+	injector::WriteMemory(0x430730, ResX, true); // 800
+	injector::WriteMemory(0x43072b, ResY, true); // 600
+
+// no idea chatroom
+	injector::WriteMemory(0x43074c, ResX, true); // 800
+	injector::WriteMemory(0x43073b, ResY, true); // 600
+
+// no idea
+	injector::WriteMemory(0x430a2b, ResX, true); // 800
+	injector::WriteMemory(0x430a26, ResY, true); // 600
+
+// no idea
+	injector::WriteMemory(0x430a4d, ResX, true); // 800
+	injector::WriteMemory(0x430a39, ResY, true); // 600
+
+// no idea
+	injector::WriteMemory(0x430e46, ResX, true); // 800
+	injector::WriteMemory(0x430e41, ResY, true); // 600
+
+// no idea
+	injector::WriteMemory(0x430e68, ResX, true); // 800
+	injector::WriteMemory(0x430e54, ResY, true); // 600
+
+// no idea
+	injector::WriteMemory(0x4334d4, ResX, true); // 800
+	injector::WriteMemory(0x4334cf, ResY, true); // 600
+
+// no idea
+
+	injector::WriteMemory(0x433ac4, ResX, true); // 800
+	injector::WriteMemory(0x433abf, ResY, true); // 600
+	
+*/
+/* ======================== END INDEX IGNORE ======================= */
+
+// LATER CODE STRUCTURES
+
+	/* === MYSTERY / PLAYGOUND === */
+
+
+	/* nothing responsible here for initial start main menu mouse grab injector::WriteMemory(0x4331FB, ResX, true); // 800 - 320
+
+	injector::WriteMemory(0x41321a, ResY, true); // 600 - 258 (near 1cc - 460)
+	injector::WriteMemory(0x413e8e, ResY, true); // 600 - 258 (near 1cc - 460)
+	injector::WriteMemory(0x41442a, ResY, true); // 600 - 258 (near 1cc - 460)
+	injector::WriteMemory(0x415e9e, ResY, true); // 600 - 258 (near 1cc - 460)
+	injector::WriteMemory(0x41567e, ResY, true); // 600 - 258 (near 1cc - 460)
+	injector::WriteMemory(0x414bda, ResY, true); // 600 - 258 (near 1cc - 460)
+	injector::WriteMemory(0x41fd61, ResY, true); // 600 - 258 (near 1cc - 460)
+	injector::WriteMemory(0x41ffab, ResY, true); // 600 - 258 (near 1cc - 460)
+	injector::WriteMemory(0x429109, ResY, true); // 600 - 258 (near 1cc - 460)
+	injector::WriteMemory(0x418a58, ResY, true); // 600 - 258 (near 1cc - 460)
+	injector::WriteMemory(0x41b784, ResY, true); // 600 - 258 (near 1cc - 460)
+	injector::WriteMemory(0x41a89f, ResY, true); // 600 - 258 (near 1cc - 460)
+	injector::WriteMemory(0x41676e, ResY, true); // 600 - 258 (near 1cc - 460)
+	injector::WriteMemory(0x41727e, ResY, true); // 600 - 258 (near 1cc - 460) */
+
+	/* === NOT WORTH / BAD ? === */
+// TITLE MAIN MENU SELECTION OFFSET - detaches ANY and ANYWHERE menu text from UI background (options (not helpful?)
+	//injector::WriteMemory(0x42aac1, ResX, true); // 800
+	//injector::WriteMemory(0x42aabc, ResY, true); // 600
+
+// Menu background and selection (ui element) offsetter-placement (not helpful?) On very miniful, it puts top left out of accessible area
+	//injector::WriteMemory(0x42aad7, ResX, true); // 800
+	//injector::WriteMemory(0x42aac9, ResY, true); // 600
+
+
+	//injector::WriteMemory(0x42f03b, ResX, true); // 800
+	//injector::WriteMemory(0x42f036, ResY, true); // 600
+	 //!injector::WriteMemory(0x42F057, ResX, true); // 800 - 320
+	 //!injector::WriteMemory(0x42F047, ResY, true); // 600 - 258
+	// Crashes the game when opening single player
+	
+	/*
+	injector::WriteMemory(0x41321A, ResY, true); // 600 0x258 5802 CANCEL
+	injector::WriteMemory(0x4132B6, ResY, true); // 600 0x258 5802 SAVE
+	injector::WriteMemory(0x413381, ResY, true); // 600 0x258 5802 DELETE
+	injector::WriteMemory(0x413E8E, ResY, true); // 600 0x258 5802 CANCEL
+	injector::WriteMemory(0x413F28, ResY, true); // 600 0x258 5802 LOAD
+	injector::WriteMemory(0x41442A, ResY, true); // 600 0x258 5802 CANCEL
+	injector::WriteMemory(0x4144C7, ResY, true); // 600 0x258 5802 OK
+	injector::WriteMemory(0x414BDA, ResY, true); // 600 0x258 5802 CANCEL
+	injector::WriteMemory(0x414C76, ResY, true); // 600 0x258 5802 OK
+	injector::WriteMemory(0x41567E, ResY, true); // 600 0x258 5802 CANCEL
+	injector::WriteMemory(0x415718, ResY, true); // 600 0x258 5802 OK
+	injector::WriteMemory(0x415E9E, ResY, true); // 600 0x258 5802 CANCEL
+	injector::WriteMemory(0x413E8E, ResY, true); // 600 0x258 5802 CANCEL
+	injector::WriteMemory(0x415F38, ResY, true); // 600 0x258 5802 OK
+	injector::WriteMemory(0x41676E, ResY, true); // 600 0x258 5802 CANCEL
+	injector::WriteMemory(0x416808, ResY, true); // 600 0x258 5802 OK
+	injector::WriteMemory(0x41727E, ResY, true); // 600 0x258 5802 CANCEL
+	injector::WriteMemory(0x413E8E, ResY, true); // 600 0x258 5802 CANCEL
+	injector::WriteMemory(0x417318, ResY, true); // 600 0x258 5802 OK
+	injector::WriteMemory(0x418A58, ResY, true); // 600 0x258 5802
+	injector::WriteMemory(0x41A89F, ResY, true); // 600 0x258 5802 CANCEL
+	*/

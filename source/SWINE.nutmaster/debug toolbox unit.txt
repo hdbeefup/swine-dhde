@@ -1,0 +1,56 @@
+[Service]
+Model = units\1text\utanfuto_service.4d
+ Price = 150
+ UpgradeMask = 48
+ Character = R13-elnok
+ Voice = R01-Parancsnok
+ Icon = service
+
+Resource = 1
+SpecialType = 8
+SpecialTime = 0.1
+Projectile = Load Service
+ShotHeight = .5
+ShotSpeed = 2
+ShotAngle = 60
+SpecialSound1 = special/szereles.wav
+
+MoveType = 2
+Cargo = 900
+MoveSpeed = 2.35
+SpinSpeed = 300
+
+Always visible = 1
+MaxHP = 180
+Level2XP = 1000000
+Level3XP = 1000000
+ FrontArmor = 3
+ BackArmor = 3
+ TopArmor = 2
+Sight	= 30
+MinRange = 0
+MaxRange = 30
+
+UnitSize = 1.7
+UnitType = 3
+
+ShotType = 1
+TurretSpeed = 300
+Ammo = 888
+AmmoValue = 1
+Damage = 50
+ReloadTime = 0.1
+ShotSound = shoot\raketa.wav
+ShotEffect = 4
+Projectile2 = int_raketa
+
+EngineSound = engine/d_loveg.wav
+
+Ghost_Texture = rabbit_ghosts\elnok1.tga
+BodyKick =  1.5
+KickSize =  0.2
+KickTime = 1
+
+MaxFuel = 100
+Consume = 1000000000
+;---------------------------------------
