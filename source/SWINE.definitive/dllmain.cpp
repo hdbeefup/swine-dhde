@@ -1,25 +1,23 @@
 #include "stdafx.h"
 
-char* relEdition = {"~~~### S.W.I.N.E. Classic HD Remaster. Darius (DW5) ### bads.tm ### github.com/hdbeefup ### (C) 2016-2021 ~~~ Source code available under GPL3 License (ᵔ◡ᵔ)"};
-char* TheOtherSide = { "Greetings from the other side! Nice to see you poking around ^_^ | I guess it's not obselete after all, and While yes things were happening slow, but i've been tinkering a long while with swine, years before Kite games made their debut. Never got a chance, or spare time to focus on this lil project, It technically shouldn't take longer than a week. In any case here's a lesson you shouldn't forget, work on things now, do things you enjoy, see where you fit the best, and screw every other thing keeping you busy, and doesn't even profit you in any meaningful way. Oh and don't waste time, watch stuff at 1.5x video speed or whatever you find suitable, it saves time and its like free real estate (doesn't impact in any way..) And with this being done, with no Kite Kindness in sight, This is my goodbye to S.W.I.N.E. community :c" };
+char* relEdition = {"~~~### S.W.I.N.E. Super Remaster. Darius (DW5) ### bads.tm ### github.com/hdbeefup ### (C) 2016-2021 ~~~ Source code available under GPL3 License (ᵔ◡ᵔ)"};
 
 // base adress ??
 
-char hdLang, basepath, multiplayerIP;
+char multiplayerIP;
 float CamMaxZoomIn, CamMaxZoomOut, CamMaxAngleUp, CamMaxAngleDown, CamMapLimit;
 int SWINEEdi;
-bool bEnableExperimentResPW, bModdedTanklist, bCustomLang;
+bool bEnableExperimentResPW, bModdedTanklist, bEnableCheats, bMapRotate, bUseWASD, bDevMode;
 
 void Init()
 {
-	CIniReader iniReader("swinechd.ini"); /// CHD Settings
-	std::string basepath = iniReader.ReadString("Mods", "Basepath", "base"); // E.g. "base" for original, or "basemods"
+	CIniReader iniReader("swinechdb.ini"); /// HDB Settings
 
 	bModdedTanklist = iniReader.ReadInteger("Mods", "TanklistMod", 0);
 	bEnableExperimentResPW = iniReader.ReadInteger("Patchworks", "EnableExperimentResPW", 1);
-	bCustomLang = iniReader.ReadInteger("Patchworks", "ExternalLanguageAssets", 0);
-	int ResX = iniReader.ReadInteger("Patchworks", "FResX", 0);
-	int ResY = iniReader.ReadInteger("Patchworks", "FResY", 0);
+	bEnableCheats = iniReader.ReadInteger("Patchworks", "EnableCheats", 0);
+	bMapRotate = iniReader.ReadInteger("Patchworks", "TESTNoMapRotate", 0);
+	bUseWASD = iniReader.ReadInteger("Patchworks", "TESTRipArrowsUseWASD", 0);
 
 	// Mods
 	int ColorMM = iniReader.ReadInteger("Mods", "ColorMainMenu", 0xF0F0F0); // COLOR
@@ -27,6 +25,8 @@ void Init()
 	injector::WriteMemory<int>(0x41809D, ColorMM, true); // COLOR
 	injector::WriteMemory<int>(0x418098, ColorHOV, true); // COLOR HOVER
 
+	std::string MPMasterlist = iniReader.ReadString("Mods", "MultiplayerMaster", "nat.kite-games.com"); // Multiplayer hub
+    //injector::WriteMemory<DWORD>(0x5016BE, (DWORD)((char*)strdup(MPMasterlist.c_str())), true); // master.gamespy.com
 
 	// Camera 
 	CamMaxZoomIn = iniReader.ReadFloat("Camera", "MaxZoomIn", 10.0f);
@@ -36,7 +36,7 @@ void Init()
 	CamMapLimit = iniReader.ReadFloat("Camera", "MapCameraLimit", 48.0f);
 
 	//injector::WriteMemory<DWORD>(0x43A85E, (DWORD)Takeover, true);
-	std::string TakeoverMD = "%s S.W.I.N.E. v%d.%d Super Remaster | dw5 | Running: " + basepath + " @" + std::to_string(ResX) + "x" + std::to_string(ResY) + " | Compiled at " __DATE__ ", " __TIME__ " |";
+	std::string TakeoverMD = "%s S.W.I.N.E. v%d.%d Super Remaster | dw5 | Compiled at " __DATE__ ", " __TIME__ " |";
 	injector::WriteMemory<DWORD>(0x43A85E, (DWORD)((char*)strdup(TakeoverMD.c_str())), true);
 	injector::WriteMemory<unsigned char>(0x43a82d, 11, true); // SWINE Edition (byte)
 
@@ -45,26 +45,6 @@ void Init()
 
   std::string fdb_unitsini = "gamedata\\" + basepath + "\\units.ini";
   injector::WriteMemory<DWORD>(0x42cc50, (DWORD)((char*)strdup(fdb_unitsini.c_str())), true);
-  injector::WriteMemory<DWORD>(0x496add, (DWORD)((char*)strdup(fdb_unitsini.c_str())), true);
-
-  std::string fdb_unitstxtini = "gamedata\\" + basepath + "\\units_txt.ini";
-  injector::WriteMemory<DWORD>(0x496b11, (DWORD)((char*)strdup(fdb_unitstxtini.c_str())), true);
-
-  std::string fdb_tutotxtini = "gamedata\\" + basepath + "\\tutorial_txt.ini";
-  injector::WriteMemory<DWORD>(0x49902e, (DWORD)((char*)strdup(fdb_tutotxtini.c_str())), true);
-
-  std::string fdb_missionsini = "gamedata\\" + basepath + "\\missions.ini";
-  injector::WriteMemory<DWORD>(0x496a3e, (DWORD)((char*)strdup(fdb_missionsini.c_str())), true);
-
-  std::string fdb_missionstxtini = "gamedata\\" + basepath + "\\missions_txt.ini";
-  injector::WriteMemory<DWORD>(0x496a6f, (DWORD)((char*)strdup(fdb_missionstxtini.c_str())), true);
-
-  std::string fdb_tipstxtini = "gamedata\\" + basepath + "\\tips_txt.ini";
-  injector::WriteMemory<DWORD>(0x402313, (DWORD)((char*)strdup(fdb_tipstxtini.c_str())), true);
-  injector::WriteMemory<DWORD>(0x48738d, (DWORD)((char*)strdup(fdb_tipstxtini.c_str())), true);
-
-  std::string fdb_objtxtini = "gamedata\\" + basepath + "\\objects.ini";
-  injector::WriteMemory<DWORD>(0x4cad0d, (DWORD)((char*)strdup(fdb_objtxtini.c_str())), true);
 
   //injector::WriteMemory<DWORD>(0x42cc50, (DWORD)((char*)"gamedata/units.ini"), true);
   //injector::WriteMemory<DWORD>(0x496add, (DWORD)((char*)"gamedata/units.ini"), true);
@@ -81,8 +61,9 @@ void Init()
 	  int i, tanks = 0, characters = 0;
 	  std::string strDL;
 	  /*			 <~!DEVS!~>				 */
-	  //std::ifstream file("tanks.txt");
-	  std::ifstream file("gamedata\\" + basepath + "\\tanks.txt");
+	  std::ifstream file("tanks.txt");
+	  //if (bDevMode) { std::ifstream file("gamedata\\" + basepath + "\\tanks.txt"); } else { std::ifstream file("gamedata\\" + basepath + "\\tanks.txt"); }
+
 	  std::string str2;
 	  while (std::getline(file, str2)) {
 		  //check characters

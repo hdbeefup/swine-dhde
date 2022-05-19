@@ -75,5 +75,7 @@ workspace "SWINEClassicHD"
       defines "NDEBUG"
       optimize "On"
 
-project "SWINE.nutmaster"
-   setpaths("Z:/Games/S.W.I.N.E/scripts", "swine.exe")
+project "SWINE.definitive"
+   setpaths("C:/Program Files (x86)/Steam/steamapps/common/SWINE HD Remaster/scripts", "swinehd.exe")
+project "EDITOR.definitive"
+   setpaths("C:/Program Files (x86)/Steam/steamapps/common/SWINE HD Remaster/scripts", "editor.exe")
