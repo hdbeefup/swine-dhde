@@ -1,0 +1,31 @@
+(x64dbg, due to relocation region a simple patch for DIY can't really be made or exported)
+cheat menu (search by string for: SWINE_GAMEVIEW_CHAT_CHEAT and scroll up a bit)
+009BF796 | B0 01                    | mov al,1                                                | gameview.cpp:2262
+009BF798 | E9 BD100000              | jmp swinehd.9C085A                                      |
+009BF79D | 8B0D 2861A900            | mov ecx,dword ptr ds:[<class SCampaign * Campaign>]     | gameview.cpp:1788, ecx:_WinMainCRTStartup
+009BF7A3 | E8 B8A1FBFF              | call <swinehd.public: bool __thiscall SCampaign::IsMult |
+009BF7A8 | 84C0                     | test al,al                                              |
+009BF7AA | 0F84 D4000000            | je swinehd.9BF884                                       | <-!---- TURN THIS JE INTO JNE !!!!!!!!!!!!
+009BF7B0 | 80BF 803C0000 00         | cmp byte ptr ds:[edi+3C80],0                            | edi+3C80:RakNet::RakPeer::RakPeer+96
+009BF7B7 | 0F85 D4000000            | jne swinehd.9BF891                                      |
+009BF7BD | 8B87 1C340000            | mov eax,dword ptr ds:[edi+341C]                         | gameview.cpp:1790, edi+341C:RakNet::OP_NEW_ARRAY<RakNet::RakPeer::RemoteSystemStruct>+42
+009BF7C3 | 8D8F 1C340000            | lea ecx,dword ptr ds:[edi+341C]                         | ecx:_WinMainCRTStartup, edi+341C:RakNet::OP_NEW_ARRAY<RakNet::RakPeer::RemoteSystemStruct>+42
+009BF7C9 | 6A 01                    | push 1                                                  |
+009BF7CB | FF50 74                  | call dword ptr ds:[eax+74]                              |
+009BF7CE | 8B0D 2861A900            | mov ecx,dword ptr ds:[<class SCampaign * Campaign>]     | gameview.cpp:1791, ecx:_WinMainCRTStartup
+009BF7D4 | E8 87A1FBFF              | call <swinehd.public: bool __thiscall SCampaign::IsMult |
+009BF7D9 | 84C0                     | test al,al                                              |
+009BF7DB | 75 07                    | jne swinehd.9BF7E4                                      |
+009BF7DD | 68 5825A300              | push swinehd.A32558                                     | gameview.cpp:1793, A32558:"SWINE_GAMEVIEW_CHAT_CHEAT"
+009BF7E2 | EB 2F                    | jmp swinehd.9BF813                                      | gameview.cpp:1795
+009BF7E4 | 8B8F 8C010000            | mov ecx,dword ptr ds:[edi+18C]                          | gameview.cpp:1797, ecx:_WinMainCRTStartup, edi+18C:std::exception::exception+1B
+009BF7EA | FFB1 34040000            | push dword ptr ds:[ecx+434]                             | ecx+434:__scrt_fastfail+D8
+009BF7F0 | E8 ABD0FEFF              | call <swinehd.public: struct SPlayer * __thiscall SWorl |
+009BF7F5 | 8378 0C 00               | cmp dword ptr ds:[eax+C],0                              |
+009BF7F9 | 7E 13                    | jle swinehd.9BF80E                                      |
+
+camera (search by constant for example 41B00000 or BF91361E)
+009ADD60 | C741 14 1E3691BF         | mov dword ptr ds:[ecx+14],BF91361E                      | ecx+14:_alldiv+A   | camera angle (-1.13446)
+009ADD67 | C741 18 C3B832BF         | mov dword ptr ds:[ecx+18],BF32B8C3                      | ecx+18:_alldiv+E   | camera angle (-0.698132 or -0.69813174)
+009ADD6E | C741 1C 00003041         | mov dword ptr ds:[ecx+1C],41300000                      | ecx+1C:_alldiv+12  | zoom in (11 in float)
+009ADD75 | C741 20 0000B041         | mov dword ptr ds:[ecx+20],41B00000                      | ecx+20:_alldiv+16  | zoom out (22 in float)
