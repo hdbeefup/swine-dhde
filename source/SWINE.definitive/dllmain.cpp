@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-char* relEdition = {"~~~### S.W.I.N.E. Super Remaster. Darius (DW5) ### bads.tm ### github.com/hdbeefup ### (C) 2016-2021 ~~~ Source code available under GPL3 License (ᵔ◡ᵔ)"};
+const char* relEdition = {"~~~### S.W.I.N.E. Super Remaster. Darius (DW5) ### bads.tm ### github.com/hdbeefup ### (C) 2016-2021 ~~~ Source code available under GPL3 License (ᵔ◡ᵔ)"};
 
 // base adress ??
 
@@ -11,6 +11,11 @@ bool bEnableExperimentResPW, bModdedTanklist, bEnableCheats, bMapRotate, bUseWAS
 
 void Init()
 {
+	auto BaseAddress = GetModuleHandle(NULL);
+	auto BaseAddressptr = (uintptr_t)GetModuleHandle(NULL);
+	OutputDebugStringA("Hello HDBEEFUP!");
+	OutputDebugStringA((LPCSTR)BaseAddress);
+	OutputDebugStringA((LPCSTR)BaseAddress+0x100516+0x6CF46);
 	CIniReader iniReader("swinechdb.ini"); /// HDB Settings
 
 	bModdedTanklist = iniReader.ReadInteger("Mods", "TanklistMod", 0);
@@ -22,8 +27,8 @@ void Init()
 	// Mods
 	int ColorMM = iniReader.ReadInteger("Mods", "ColorMainMenu", 0xF0F0F0); // COLOR
 	int ColorHOV = iniReader.ReadInteger("Mods", "ColorMainMenuHOV", 0xFFFFFF); // COLOR HOVER
-	injector::WriteMemory<int>(0x41809D, ColorMM, true); // COLOR
-	injector::WriteMemory<int>(0x418098, ColorHOV, true); // COLOR HOVER
+	//injector::WriteMemory<int>(0x41809D, ColorMM, true); // COLOR
+	//injector::WriteMemory<int>(0x418098, ColorHOV, true); // COLOR HOVER
 
 	std::string MPMasterlist = iniReader.ReadString("Mods", "MultiplayerMaster", "nat.kite-games.com"); // Multiplayer hub
     //injector::WriteMemory<DWORD>(0x5016BE, (DWORD)((char*)strdup(MPMasterlist.c_str())), true); // master.gamespy.com
@@ -37,18 +42,23 @@ void Init()
 
 	//injector::WriteMemory<DWORD>(0x43A85E, (DWORD)Takeover, true);
 	std::string TakeoverMD = "%s S.W.I.N.E. v%d.%d Super Remaster | dw5 | Compiled at " __DATE__ ", " __TIME__ " |";
-	injector::WriteMemory<DWORD>(0x43A85E, (DWORD)((char*)strdup(TakeoverMD.c_str())), true);
-	injector::WriteMemory<unsigned char>(0x43a82d, 11, true); // SWINE Edition (byte)
+	//injector::WriteMemory<DWORD>(BaseAddress-0x28F77, (DWORD)((char*)strdup(TakeoverMD.c_str())), true);
+	injector::WriteMemory<DWORD>(BaseAddressptr + 0x100516 + 0x6CF46, (DWORD)((char*)strdup(TakeoverMD.c_str())), true);
+	//injector::WriteMemory<DWORD>(BaseAddressptr + 0X76C94E96, (DWORD)((char*)strdup(TakeoverMD.c_str())), true);
+	//injector::WriteMemory<DWORD>(0X00b0819f, (DWORD)((char*)strdup(TakeoverMD.c_str())), true);
+	//injector::WriteMemory<DWORD>(BaseAddress+0xD759E, (DWORD)((char*)strdup(TakeoverMD.c_str())), true);
+	//injector::WriteMemory<unsigned char>(0x43a82d, 11, true); // SWINE Edition (byte)
 
  /* ====== Mods ====== */
-  injector::WriteMemory<unsigned char>(0x42cc68, 0xEB, true); // Disable tamper check (JMP)
+  //injector::WriteMemory<unsigned char>(0x42cc68, 0xEB, true); // Disable tamper check (JMP)
 
-  std::string fdb_unitsini = "gamedata\\" + basepath + "\\units.ini";
-  injector::WriteMemory<DWORD>(0x42cc50, (DWORD)((char*)strdup(fdb_unitsini.c_str())), true);
+  //std::string fdb_unitsini = "gamedata\\" + basepath + "\\units.ini";
+  //injector::WriteMemory<DWORD>(0x42cc50, (DWORD)((char*)strdup(fdb_unitsini.c_str())), true);
 
   //injector::WriteMemory<DWORD>(0x42cc50, (DWORD)((char*)"gamedata/units.ini"), true);
   //injector::WriteMemory<DWORD>(0x496add, (DWORD)((char*)"gamedata/units.ini"), true);
 
+	 /*
   injector::WriteMemory<float>(0x4CB3A9, CamMaxZoomIn, true); // Max zoom in DEF: 10
   injector::WriteMemory<float>(0x4CB3B3, CamMaxZoomOut, true); // Max zoom out DEF: 20
   injector::WriteMemory<float>(0x4CB395, CamMaxAngleUp, true); // Max angle up DEF: -1.13
@@ -61,7 +71,7 @@ void Init()
 	  int i, tanks = 0, characters = 0;
 	  std::string strDL;
 	  /*			 <~!DEVS!~>				 */
-	  std::ifstream file("tanks.txt");
+	  /*/ std::ifstream file("tanks.txt");
 	  //if (bDevMode) { std::ifstream file("gamedata\\" + basepath + "\\tanks.txt"); } else { std::ifstream file("gamedata\\" + basepath + "\\tanks.txt"); }
 
 	  std::string str2;
@@ -76,7 +86,7 @@ void Init()
 		  strDL.append((64 - characters), '\0');                    // ".........."
 
 		  tanks++; /* CONFIRMED: TANKS COUNTER AND WRITING WORKS PROPERLY AS IT SHOULD, thus problem is with final write, not reading*/
-		  characters = 0;
+		  /*/ characters = 0;
 	  }
 
 	  //injector::WriteMemory<DWORD>(0x409ef4, (DWORD)((char*)strdup(fdb_menuxxx.c_str())), true);
@@ -110,8 +120,9 @@ void Init()
 	  // calls to spot where campaign units are listed
 	  injector::WriteMemory<DWORD>(0x4199ef, (DWORD)aNyulDzsip, true);
 	  //injector::WriteMemory<DWORD>(0x5431B8, (DWORD)aNyulDzsip, true); // 0x5431B8 .. 0x5431b0 not worth to use
-
-  }
+/*/
+/* }
+  */
 }
 
 
