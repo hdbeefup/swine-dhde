@@ -46,35 +46,6 @@ void Init()
 	injector::WriteMemory<DWORD>(BaseAddressptr + 0x6DB46, (DWORD)((char*)strdup(TakeoverMD.c_str())), true); // Relative Virtual Address... fancyyy
 	//injector::WriteMemory<unsigned char>(0x43a82d, 11, true); // SWINE Edition (byte)
 
-	bool bEnableExperimentResPW1, bEnableExperimentResPW2, bEnableExperimentResPW3, 
-		bEnableExperimentResPW4, bEnableExperimentResPW5, bEnableExperimentResPW6, 
-		bEnableExperimentResPW7, bEnableExperimentResPW8, bEnableExperimentResPW9, 
-		bEnableExperimentResPW10, bEnableExperimentResPW11, bEnableExperimentResPW12, 
-		bEnableExperimentResPW13, bEnableExperimentResPW14, bEnableExperimentResPW15, 
-		bEnableExperimentResPW16, bEnableExperimentResPW17, bEnableExperimentResPW18;
-	bEnableExperimentResPW1 = iniReader.ReadInteger("Patchworks", "EnableExperimentResPW1", 0);
-	bEnableExperimentResPW2 = iniReader.ReadInteger("Patchworks", "EnableExperimentResPW2", 0);
-	bEnableExperimentResPW3 = iniReader.ReadInteger("Patchworks", "EnableExperimentResPW3", 0);
-	bEnableExperimentResPW4 = iniReader.ReadInteger("Patchworks", "EnableExperimentResPW4", 0);
-	bEnableExperimentResPW5 = iniReader.ReadInteger("Patchworks", "EnableExperimentResPW5", 0);
-	bEnableExperimentResPW6 = iniReader.ReadInteger("Patchworks", "EnableExperimentResPW6", 0);
-	bEnableExperimentResPW7 = iniReader.ReadInteger("Patchworks", "EnableExperimentResPW7", 0);
-	bEnableExperimentResPW8 = iniReader.ReadInteger("Patchworks", "EnableExperimentResPW8", 0);
-	bEnableExperimentResPW9 = iniReader.ReadInteger("Patchworks", "EnableExperimentResPW9", 0);
-	bEnableExperimentResPW10 = iniReader.ReadInteger("Patchworks", "EnableExperimentResPW10", 0);
-	bEnableExperimentResPW11 = iniReader.ReadInteger("Patchworks", "EnableExperimentResPW11", 0);
-	bEnableExperimentResPW12 = iniReader.ReadInteger("Patchworks", "EnableExperimentResPW12", 0);
-	bEnableExperimentResPW13 = iniReader.ReadInteger("Patchworks", "EnableExperimentResPW13", 0);
-	bEnableExperimentResPW14 = iniReader.ReadInteger("Patchworks", "EnableExperimentResPW14", 0);
-	bEnableExperimentResPW15 = iniReader.ReadInteger("Patchworks", "EnableExperimentResPW15", 0);
-	bEnableExperimentResPW16 = iniReader.ReadInteger("Patchworks", "EnableExperimentResPW16", 0);
-	bEnableExperimentResPW17 = iniReader.ReadInteger("Patchworks", "EnableExperimentResPW17", 0);
-	bEnableExperimentResPW18 = iniReader.ReadInteger("Patchworks", "EnableExperimentResPW18", 0);
-
-
-
-
-
  /* ====== Mods ====== */
   injector::WriteMemory<unsigned char>(BaseAddressptr+0xDF7AB, 0x85, true); // Enable Cheats 0x9bf7ab || DF7AB direct, less direct 0xDF7DB
 
@@ -119,50 +90,34 @@ void Init()
 		  characters = 0;
 	  }
 
-	  if (bEnableExperimentResPW1) {
 		  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xEA0C3, tanks, true); // @ E94C3
-	  }if (bEnableExperimentResPW2) {
 		  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xEA0FF, tanks, true); // @ E94FF
-	  }if (bEnableExperimentResPW3) {
-		  injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xEA137, tanks, true); // @ E9537  breaks briefing enemy side tank icons
-	  }if (bEnableExperimentResPW4) {
+
 		  injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xEA1A4, tanks, true); // @ E95A4
-	  }if (bEnableExperimentResPW5) {
 		  injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xEA2DD, tanks, true); // @ E96DD
-	  }if (bEnableExperimentResPW6) {
 		  injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xEA350, tanks, true); // @ E9750
-	  }if (bEnableExperimentResPW7) {
 		  injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xEA385, tanks, true); // @ E9785
-	  }if (bEnableExperimentResPW8) {
-		  injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xEF89F, tanks, true); // @ EEC9F breaks same icon for every
-	  }if (bEnableExperimentResPW9) {
+
 		  injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xEF8F5, tanks, true); // @ EECF5
-	  }if (bEnableExperimentResPW10) {
 		  injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xEF94A, tanks, true); // @ EED4A
-	  }if (bEnableExperimentResPW11) {
 		  injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xF014F, tanks, true); // @ EF54F
 
 	  // 
-	  }if (bEnableExperimentResPW12) {
 		  injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xF08C9, tanks, true); // @ EFCC9
-	  }if (bEnableExperimentResPW13) {
 		  injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xF08E6, tanks, true); // @ EFCE6
 	  // 
-
-	  }if (bEnableExperimentResPW14) {
 		  injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xF323F, tanks, true); // @ F263F
-	  }if (bEnableExperimentResPW15) {
 		  injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xF3E0B, tanks, true); // @ F320B
-	  }if (bEnableExperimentResPW16) {
-		  injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xF4868, tanks, true); // @ F3C68 breaks: first tank is every tank
-
-	  // 
-	  }if (bEnableExperimentResPW17) {
+	  //
 		  injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xF4B32, tanks, true); // @ F3F32
-	  }if (bEnableExperimentResPW18) {
 		  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xF4B42, tanks, true); // @ F3F42
-		  
-	  }
+
+		  if (bEnableExperimentResPW) {
+			  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xEF89F, tanks, true); // @ EEC9F breaks same icon for every
+			  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xF4868, tanks, true); // @ F3C68 breaks: first tank is every tank
+			  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xEA137, tanks, true); // @ E9537  breaks briefing enemy side tank icons
+		  }
+
 
 	  int nyulstringlen = strDL.size();
 	  char* aNyulDzsip = new char[nyulstringlen + 1];
