@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-//const char* relEdition = {"~~~### S.W.I.N.E. Super Remaster. Darius (DW5) ### bads.tm ### github.com/hdbeefup ### (C) 2016-2021 ~~~ Source code available under GPL3 License (ᵔ◡ᵔ)"};
+std::string relEdition = {"~~~### S.W.I.N.E. Super Remaster. Darius (DW5) ### bads.tm ### github.com/hdbeefup ### (C) 2016-2021 ~~~ Source code available under GPL3 License (ᵔ◡ᵔ)"};
 
 // base adress ??
 
@@ -91,42 +91,43 @@ void Init()
 		  characters = 0;
 	  }
 
-		  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xEA0C3, tanks, true); // @ E94C3
-		  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xEA0FF, tanks, true); // @ E94FF
+	  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xEA0C3, tanks, true); // @ E94C3  ICON? HOW MANY TANKS DO WE HAVE FOR USE IN CAMPAIGN? (/p-01)
+	  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xEA0FF, tanks, true); // @ E94FF
 
-		  injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xEA1A4, tanks, true); // @ E95A4
-		  //X injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xEA2DD, tanks, true); // @ E96DD new own units YUP
-		  injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xEA350, tanks, true); // @ E9750
-		  injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xEA385, tanks, true); // @ E9785
+	  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xEA1A4, tanks, true); // @ E95A4
+	  //X injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xEA2DD, tanks, true); // @ E96DD new own units YUP
+	  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xEA350, tanks, true); // @ E9750
+	  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xEA385, tanks, true); // @ E9785
 
-		  injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xEF8F5, tanks, true); // @ EECF5
-		  injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xEF94A, tanks, true); // @ EED4A
-		  //X injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xF014F, tanks, true); // @ EF54F causes bugged icons
+	  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xEF8F5, tanks, true); // @ EECF5
+	  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xEF94A, tanks, true); // @ EED4A
+	  //X injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xF014F, tanks, true); // @ EF54F causes bugged icons
 
-	  // 
-		  //X injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xF08C9, tanks, true); // @ EFCC9 this disabled allows to buy things but still bugged icons ingame market
-		  injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xF08E6, tanks, true); // @ EFCE6
-	  // 
-		  //X injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xF323F, tanks, true); // @ F263F class name not found
-		  //X injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xF3E0B, tanks, true); // @ F320B new own units fix? also ingame market prices
-	  //
-	  
-		  injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xF4B32, tanks, true); // @ F3F32
-		  //X injector::WriteMemory<unsigned char>(BaseAddressptr + 0xF4B42, tanks, true); // @ F3F42 this disabled. buys into void
+	  //X injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xF08C9, tanks, true); // @ EFCC9 this disabled allows to buy things but still bugged icons ingame market
+	  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xF08E6, tanks, true); // @ EFCE6 NEAR MARKET CLASS
 
-		  
-		 injector::WriteMemory<unsigned char>(BaseAddressptr + 0x9B28D, tanks, true); // @ 9A68D
-		  
-		  // instacrash
-		  //injector::WriteMemory<unsigned char>(BaseAddressptr + 0xEF997, tanks, true); // @ EED97 invalid child
-		  //injector::WriteMemory<unsigned char>(BaseAddressptr + 0xF019B, tanks, true); // @ EF59B font leak?
-		  //injector::WriteMemory<unsigned char>(BaseAddressptr + 0xF08E6, tanks, true); // @ EFCE6 nothing
+	  //X injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xF323F, tanks, true); // @ F263F class name not found
+	  //X injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xF3E0B, tanks, true); // @ F320B new own units fix? also ingame market prices
 
-		  if (bEnableExperimentResPW) {
-			  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xEF89F, tanks, true); // @ EEC9F breaks same icon for every
-			  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xF4868, tanks, true); // @ F3C68 breaks: first tank is every tank
-			  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xEA137, tanks, true); // @ E9537  breaks briefing enemy side tank icons
-		  }
+	  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xF4B32, tanks, true); // @ F3F32
+	  //X injector::WriteMemory<unsigned char>(BaseAddressptr + 0xF4B42, tanks, true); // @ F3F42 this disabled. buys into void
+
+	 //?injector::WriteMemory<unsigned char>(BaseAddressptr + 0x9B28D, tanks, true); // @ 9A68D ?? 11
+
+	  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xEA270, tanks, true); // @ E9670 new (ICON (e.g. briefing) max 127 | aka near '%s - %s'
+
+	  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xEFD91, tanks, true); // @ EF191 THIS IS A VERY GOOD BOY
+	  //injector::WriteMemory<unsigned char>(BaseAddressptr + 0xF18C9, tanks, true); // @  F0CC9 "ffs" method
+
+	   //injector::WriteMemory<unsigned char>(BaseAddressptr + 0xEF997, tanks, true); // @ EED97 invalid child
+	   //injector::WriteMemory<unsigned char>(BaseAddressptr + 0xF019B, tanks, true); // @ EF59B font leak?
+	  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xF08E6, tanks, true); // @ EFCE6 nothing 0 impact
+
+	  if (bEnableExperimentResPW) {
+		  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xEF89F, tanks, true); // @ EEC9F breaks same icon for every (ICON)
+		  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xF4868, tanks, true); // @ F3C68 breaks: first tank is every tank (PRICE)
+	   injector::WriteMemory<unsigned char>(BaseAddressptr + 0xEA137, tanks, true); // @ E9537 --breaks briefing enemy side tank icons--
+  }
 
 
 

@@ -12,3 +12,23 @@
 		 injector::WriteMemory<unsigned char>(BaseAddressptr + 0xB87E8, tanks, true); // @ B7BE8 "BUFF" method hop
 		 injector::WriteMemory<unsigned char>(BaseAddressptr + 0xB7D6C, tanks, true); // @ xxB7D6Cxxx "BUFF" method hop
 		 injector::WriteMemory<unsigned char>(BaseAddressptr + 0XB6451, tanks, true); // @ B5851 "BUFF" method hop
+
+		 injector::WriteMemory<unsigned char>(BaseAddressptr + 0xBE103, tanks, true); // @ BC93A "ffs" method
+		 injector::WriteMemory<unsigned char>(BaseAddressptr + 0xC53BD, tanks, true); // @ BC92C "ffs" method
+		 injector::WriteMemory<unsigned char>(BaseAddressptr + 0xC5A3E, tanks, true); // @ BC93A "ffs" method
+		 injector::WriteMemory<unsigned char>(BaseAddressptr + 0xD406E, tanks, true); // @ BC92C "ffs" method
+
+		 injector::WriteMemory<unsigned char>(BaseAddressptr + 0xE876E, tanks, true); // @  "ffs" method
+		 injector::WriteMemory<unsigned char>(BaseAddressptr + 0xE8D02, tanks, true); // @  "ffs" method
+		 
+		 injector::WriteMemory<unsigned char>(BaseAddressptr + 0xEA417, tanks, true); // @  "ffs" method also error on exit
+		 injector::WriteMemory<unsigned char>(BaseAddressptr + 0xED55A, tanks, true); // @  "ffs" method error on exit
+
+		 injector::WriteMemory<unsigned char>(BaseAddressptr + 0xED5DF, tanks, true); // @  "ffs" method nice guess but no
+		 injector::WriteMemory<unsigned char>(BaseAddressptr + 0xED620, tanks, true); // @  "ffs" method
+
+		 injector::WriteMemory<unsigned char>(BaseAddressptr + 0xED6B6, tanks, true); // @  "ffs" method
+		 injector::WriteMemory<unsigned char>(BaseAddressptr + 0xED9B8, tanks, true); // @  "ffs" method
+
+		 injector::WriteMemory<unsigned char>(BaseAddressptr + 0xEE9F7, tanks, true); // @  "ffs" method nice try
+		 injector::WriteMemory<unsigned char>(BaseAddressptr + 0xEEBE5, tanks, true); // @  "ffs" method error on exit
