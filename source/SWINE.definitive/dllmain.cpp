@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-const char* relEdition = {"~~~### S.W.I.N.E. Super Remaster. Darius (DW5) ### bads.tm ### github.com/hdbeefup ### (C) 2016-2021 ~~~ Source code available under GPL3 License (ᵔ◡ᵔ)"};
+//const char* relEdition = {"~~~### S.W.I.N.E. Super Remaster. Darius (DW5) ### bads.tm ### github.com/hdbeefup ### (C) 2016-2021 ~~~ Source code available under GPL3 License (ᵔ◡ᵔ)"};
 
 // base adress ??
 
@@ -41,9 +41,10 @@ void Init()
 	CamMapLimit = iniReader.ReadFloat("Camera", "MapCameraLimit", 48.0f);
 
 	//injector::WriteMemory<DWORD>(0x43A85E, (DWORD)Takeover, true);
-	std::string TakeoverMD = "%s S.W.I.N.E. v%d.%d.%d Super Remaster | dw5 | Compiled at " __DATE__ ", " __TIME__ " |"; // S.W.I.N.E. %s v%d.%d.%d
-	//injector::WriteMemory<DWORD>(BaseAddress-0x28F77, (DWORD)((char*)strdup(TakeoverMD.c_str())), true);
-	injector::WriteMemory<DWORD>(BaseAddressptr + 0x6DB46, (DWORD)((char*)strdup(TakeoverMD.c_str())), true); // Relative Virtual Address... fancyyy
+	
+	//std::string TakeoverMD = "S.W.I.N.E. Definitive Edition v%d.%d.%d %s | dw5 | Compiled at " __DATE__ ", " __TIME__ " |"; // S.W.I.N.E. %s v%d.%d.%d
+	//injector::WriteMemory<DWORD>(BaseAddressptr + 0x6DB46, (DWORD)((char*)strdup(TakeoverMD.c_str())), true); // Relative Virtual Address... fancyyy
+	
 	//injector::WriteMemory<unsigned char>(0x43a82d, 11, true); // SWINE Edition (byte)
 
  /* ====== Mods ====== */
@@ -112,11 +113,18 @@ void Init()
 		  injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xF4B32, tanks, true); // @ F3F32
 		  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xF4B42, tanks, true); // @ F3F42
 
+		  // instacrash
+		  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xEF997, tanks, true); // @ EED97
+		  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xF019B, tanks, true); // @ EF59B
+		  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xF08E6, tanks, true); // @ EFCE6
+
 		  if (bEnableExperimentResPW) {
 			  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xEF89F, tanks, true); // @ EEC9F breaks same icon for every
 			  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xF4868, tanks, true); // @ F3C68 breaks: first tank is every tank
 			  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xEA137, tanks, true); // @ E9537  breaks briefing enemy side tank icons
 		  }
+
+
 
 
 	  int nyulstringlen = strDL.size();
