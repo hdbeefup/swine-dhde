@@ -117,7 +117,36 @@ void Init()
 	  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xEA270, tanks, true); // @ E9670 new (ICON (e.g. briefing) max 127 | aka near '%s - %s'
 
 	  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xEFD91, tanks, true); // @ EF191 THIS IS A VERY GOOD BOY
-	  //injector::WriteMemory<unsigned char>(BaseAddressptr + 0xF18C9, tanks, true); // @  F0CC9 "ffs" method
+
+
+	  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xBD53A, tanks, true); // @ BC93A "LASS" method
+	  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xBD52C, tanks, true); // @ BC92C "LASS" method
+
+	  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xB5351, tanks, true); // @ B4751 "BUFF" method
+	  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xB53F6, tanks, true); // @ B47F6 "BUFF" method
+	  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xB549B, tanks, true); // @ B489B "BUFF" method
+	  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xB5A87, tanks, true); // @ B4E87 "BUFF" method HOP
+	  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xB5B2C, tanks, true); // @ B4F2C "BUFF" method
+	  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xB8427, tanks, true); // @ B7827 "BUFF" method hop
+	  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xB8ED7, tanks, true); // @ B82D7 "BUFF" method hop
+	  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xB8C21, tanks, true); // @ B8021 "BUFF" method hop
+	  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xB87E8, tanks, true); // @ B7BE8 "BUFF" method hop
+	  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xB7D6C, tanks, true); // @ xxB7D6Cxxx "BUFF" method hop
+	  injector::WriteMemory<unsigned char>(BaseAddressptr + 0XB6451, tanks, true); // @ B5851 "BUFF" method hop
+
+	  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xBE103, tanks, true); // @ BC93A "ffs" method
+	  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xC53BD, tanks, true); // @ BC92C "ffs" method
+	  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xC5A3E, tanks, true); // @ BC93A "ffs" method
+	  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xD406E, tanks, true); // @ BC92C "ffs" method
+
+	  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xE876E, tanks, true); // @  "ffs" method
+	  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xE8D02, tanks, true); // @  "ffs" method
+
+	  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xED5DF, tanks, true); // @  "ffs" method nice guess but no
+	  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xED620, tanks, true); // @  "ffs" method
+
+	  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xED6B6, tanks, true); // @  "ffs" method
+	  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xED9B8, tanks, true); // @  "ffs" method
 
 	   //injector::WriteMemory<unsigned char>(BaseAddressptr + 0xEF997, tanks, true); // @ EED97 invalid child
 	   //injector::WriteMemory<unsigned char>(BaseAddressptr + 0xF019B, tanks, true); // @ EF59B font leak?
