@@ -1,3 +1,3 @@
 @echo off
-dll2exe base202012-swine.exe SWINE.nutmaster.asi releasepigz.exe
+dll2exe base20220522-swine.exe SWINE.definitive.asi releasepigz.exe
 pause
