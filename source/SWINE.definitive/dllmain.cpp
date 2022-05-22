@@ -42,8 +42,8 @@ void Init()
 
 	//injector::WriteMemory<DWORD>(0x43A85E, (DWORD)Takeover, true);
 	
-	//std::string TakeoverMD = "S.W.I.N.E. Definitive Edition v%d.%d.%d %s | dw5 | Compiled at " __DATE__ ", " __TIME__ " |"; // S.W.I.N.E. %s v%d.%d.%d
-	//injector::WriteMemory<DWORD>(BaseAddressptr + 0x6DB46, (DWORD)((char*)strdup(TakeoverMD.c_str())), true); // Relative Virtual Address... fancyyy
+	std::string TakeoverMD = "S.W.I.N.E. Definitive %s Edition v%d.%d.%d | dw5 | Compiled at " __DATE__ ", " __TIME__ " |"; // %s must be first otherwise crash| S.W.I.N.E. %s v%d.%d.%d
+	injector::WriteMemory<DWORD>(BaseAddressptr + 0x6DB46, (DWORD)((char*)strdup(TakeoverMD.c_str())), true); // @ 6CF46 Relative Virtual Address... fancyyy
 	
 	//injector::WriteMemory<unsigned char>(0x43a82d, 11, true); // SWINE Edition (byte)
 
@@ -95,28 +95,32 @@ void Init()
 		  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xEA0FF, tanks, true); // @ E94FF
 
 		  injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xEA1A4, tanks, true); // @ E95A4
-		  injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xEA2DD, tanks, true); // @ E96DD
+		  //X injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xEA2DD, tanks, true); // @ E96DD new own units YUP
 		  injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xEA350, tanks, true); // @ E9750
 		  injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xEA385, tanks, true); // @ E9785
 
 		  injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xEF8F5, tanks, true); // @ EECF5
 		  injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xEF94A, tanks, true); // @ EED4A
-		  injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xF014F, tanks, true); // @ EF54F
+		  //X injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xF014F, tanks, true); // @ EF54F causes bugged icons
 
 	  // 
-		  injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xF08C9, tanks, true); // @ EFCC9
+		  //X injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xF08C9, tanks, true); // @ EFCC9 this disabled allows to buy things but still bugged icons ingame market
 		  injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xF08E6, tanks, true); // @ EFCE6
 	  // 
-		  injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xF323F, tanks, true); // @ F263F
-		  injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xF3E0B, tanks, true); // @ F320B
+		  //X injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xF323F, tanks, true); // @ F263F class name not found
+		  //X injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xF3E0B, tanks, true); // @ F320B new own units fix? also ingame market prices
 	  //
+	  
 		  injector::WriteMemory<unsigned char>(BaseAddressptr+ 0xF4B32, tanks, true); // @ F3F32
-		  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xF4B42, tanks, true); // @ F3F42
+		  //X injector::WriteMemory<unsigned char>(BaseAddressptr + 0xF4B42, tanks, true); // @ F3F42 this disabled. buys into void
 
+		  
+		 injector::WriteMemory<unsigned char>(BaseAddressptr + 0x9B28D, tanks, true); // @ 9A68D
+		  
 		  // instacrash
-		  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xEF997, tanks, true); // @ EED97
-		  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xF019B, tanks, true); // @ EF59B
-		  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xF08E6, tanks, true); // @ EFCE6
+		  //injector::WriteMemory<unsigned char>(BaseAddressptr + 0xEF997, tanks, true); // @ EED97 invalid child
+		  //injector::WriteMemory<unsigned char>(BaseAddressptr + 0xF019B, tanks, true); // @ EF59B font leak?
+		  //injector::WriteMemory<unsigned char>(BaseAddressptr + 0xF08E6, tanks, true); // @ EFCE6 nothing
 
 		  if (bEnableExperimentResPW) {
 			  injector::WriteMemory<unsigned char>(BaseAddressptr + 0xEF89F, tanks, true); // @ EEC9F breaks same icon for every
