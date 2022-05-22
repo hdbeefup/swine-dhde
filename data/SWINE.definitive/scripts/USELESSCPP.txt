@@ -1,0 +1,14 @@
+		 injector::WriteMemory<unsigned char>(BaseAddressptr + 0xBD53A, tanks, true); // @ BC93A "LASS" method
+		 injector::WriteMemory<unsigned char>(BaseAddressptr + 0xBD52C, tanks, true); // @ BC92C "LASS" method
+
+		 injector::WriteMemory<unsigned char>(BaseAddressptr + 0xB5351, tanks, true); // @ B4751 "BUFF" method
+		 injector::WriteMemory<unsigned char>(BaseAddressptr + 0xB53F6, tanks, true); // @ B47F6 "BUFF" method
+		 injector::WriteMemory<unsigned char>(BaseAddressptr + 0xB549B, tanks, true); // @ B489B "BUFF" method
+		 injector::WriteMemory<unsigned char>(BaseAddressptr + 0xB5A87, tanks, true); // @ B4E87 "BUFF" method HOP
+		 injector::WriteMemory<unsigned char>(BaseAddressptr + 0xB5B2C, tanks, true); // @ B4F2C "BUFF" method
+		 injector::WriteMemory<unsigned char>(BaseAddressptr + 0xB8427, tanks, true); // @ B7827 "BUFF" method hop
+		 injector::WriteMemory<unsigned char>(BaseAddressptr + 0xB8ED7, tanks, true); // @ B82D7 "BUFF" method hop
+		 injector::WriteMemory<unsigned char>(BaseAddressptr + 0xB8C21, tanks, true); // @ B8021 "BUFF" method hop
+		 injector::WriteMemory<unsigned char>(BaseAddressptr + 0xB87E8, tanks, true); // @ B7BE8 "BUFF" method hop
+		 injector::WriteMemory<unsigned char>(BaseAddressptr + 0xB7D6C, tanks, true); // @ xxB7D6Cxxx "BUFF" method hop
+		 injector::WriteMemory<unsigned char>(BaseAddressptr + 0XB6451, tanks, true); // @ B5851 "BUFF" method hop
